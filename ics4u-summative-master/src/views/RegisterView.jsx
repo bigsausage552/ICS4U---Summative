@@ -14,7 +14,7 @@ function RegisterView() {
   const [confirmPass, setConfirmPass] = useState("");
   const [selectedGenres, setSelectedGenres] = useState([]);
 
-  const { setEmail, setPass, setFirstName, setLastName, setGenres, setCart } =
+  const { setEmail, setPass, setFirstName, setLastName, setGenres, setCart, setSignedIn } =
     useStoreContext();
 
   const genres = [
@@ -56,8 +56,9 @@ function RegisterView() {
       setLastName(lastNameInput);
       setGenres(selectedGenres);
       setCart(Map());
+      setSignedIn(true);
 
-      navigate("/login");
+      navigate("/");
     }
   };
 
